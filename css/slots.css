@@ -1,0 +1,9 @@
+div{
+    display: inline-block;
+    font-size: 150%;
+    font-weight: bold;
+    padding: 9px;
+}
+span{
+    font-weight: bold;
+}

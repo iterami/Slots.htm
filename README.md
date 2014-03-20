@@ -1,2 +1,1 @@
-Slots
-=====
+Simple JavaScript slots game.
