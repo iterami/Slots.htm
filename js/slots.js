@@ -60,6 +60,8 @@ function reset(){
 
 var coins = 100;
 
+document.getElementById('coins').innerHTML = coins;
+
 window.onkeydown = function(e){
     var key = window.event ? event : e;
     key = key.charCode ? key.charCode : key.keyCode;
@@ -67,8 +69,4 @@ window.onkeydown = function(e){
     if(key == 83){ // S
         play_round();
     }
-};
-
-window.onload = function(e){
-    document.getElementById('coins').innerHTML = coins;
 };
