@@ -48,14 +48,16 @@ function play_round(){
 }
 
 function reset(){
-    if(confirm('Reset?')){
-        coins = 100;
-        document.getElementById('coins').innerHTML = coins;
-        document.getElementById('number-first').innerHTML = '';
-        document.getElementById('number-second').innerHTML = '';
-        document.getElementById('number-third').innerHTML = '';
-        document.getElementById('result').innerHTML = '';
+    if(!confirm('Reset?')){
+        return;
     }
+
+    coins = 100;
+    document.getElementById('coins').innerHTML = coins;
+    document.getElementById('number-first').innerHTML = '';
+    document.getElementById('number-second').innerHTML = '';
+    document.getElementById('number-third').innerHTML = '';
+    document.getElementById('result').innerHTML = '';
 }
 
 var coins = 100;
