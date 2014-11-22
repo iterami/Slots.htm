@@ -65,8 +65,7 @@ var coins = 100;
 document.getElementById('coins').innerHTML = coins;
 
 window.onkeydown = function(e){
-    var key = window.event ? event : e;
-    key = key.charCode ? key.charCode : key.keyCode;
+    var key = e.keyCode || e.which;
 
     // S: play a round.
     if(key == 83){
