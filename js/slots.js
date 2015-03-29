@@ -48,7 +48,7 @@ function play_round(){
 }
 
 function reset(){
-    if(!confirm('Reset coins?')){
+    if(!window.confirm('Reset coins?')){
         return;
     }
 
