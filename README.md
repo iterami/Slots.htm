@@ -1,1 +1,10 @@
-Simple JavaScript slots game.
+Slots.htm
+---------
+
+A JavaScript slots game.
+
+---
+
+Action     | Key
+-----------|----
+Play Round | S
