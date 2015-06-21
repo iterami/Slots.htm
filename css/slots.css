@@ -4,15 +4,18 @@ body{
     font-family: sans-serif;
     text-align: center;
 }
-input{
-    background: #000;
-    color: #aaa;
-}
 div{
     display: inline-block;
     font-size: 150%;
     font-weight: bold;
     padding: 9px;
+}
+input{
+    background: #000;
+    color: #aaa;
+}
+input[type=button]{
+    cursor: pointer;
 }
 span{
     font-weight: bold;
