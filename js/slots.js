@@ -1,3 +1,5 @@
+'use strict';
+
 function play_round(){
     document.getElementById('number-first').innerHTML = Math.floor(Math.random() * 10);
     document.getElementById('number-second').innerHTML = Math.floor(Math.random() * 10);
