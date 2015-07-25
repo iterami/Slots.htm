@@ -6,8 +6,8 @@ function play_round(){
     document.getElementById('number-third').innerHTML = Math.floor(Math.random() * 10);
 
     // If all numbers match...
-    if(document.getElementById('number-first').innerHTML == document.getElementById('number-second').innerHTML
-      && document.getElementById('number-second').innerHTML == document.getElementById('number-third').innerHTML){
+    if(document.getElementById('number-first').innerHTML === document.getElementById('number-second').innerHTML
+      && document.getElementById('number-second').innerHTML === document.getElementById('number-third').innerHTML){
         document.getElementById('result').innerHTML = 
           'Three Match! +'
           + (parseInt(document.getElementById('number-first').innerHTML) * 2)
@@ -17,8 +17,8 @@ function play_round(){
         coins += parseInt(document.getElementById('number-first').innerHTML) * 2;
 
     // If first number matches either of the other two numbers...
-    }else if(document.getElementById('number-first').innerHTML == document.getElementById('number-second').innerHTML
-      || document.getElementById('number-first').innerHTML == document.getElementById('number-third').innerHTML){
+    }else if(document.getElementById('number-first').innerHTML === document.getElementById('number-second').innerHTML
+      || document.getElementById('number-first').innerHTML === document.getElementById('number-third').innerHTML){
         document.getElementById('result').innerHTML = 
           'Two Match. +'
           + document.getElementById('number-first').innerHTML
@@ -28,7 +28,7 @@ function play_round(){
         coins += parseInt(document.getElementById('number-first').innerHTML);
 
     // If the second and third numbers match...
-    }else if(document.getElementById('number-second').innerHTML == document.getElementById('number-third').innerHTML){
+    }else if(document.getElementById('number-second').innerHTML === document.getElementById('number-third').innerHTML){
         document.getElementById('result').innerHTML = 
           'Two Match. +'
           + document.getElementById('number-second').innerHTML
@@ -68,7 +68,7 @@ window.onkeydown = function(e){
     var key = e.keyCode || e.which;
 
     // S: play a round.
-    if(key == 83){
+    if(key === 83){
         play_round();
     }
 };
