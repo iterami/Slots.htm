@@ -13,9 +13,11 @@ div{
 input{
     background: #000;
     color: #aaa;
+    width: 50px;
 }
 input[type=button]{
     cursor: pointer;
+    width: auto;
 }
 span{
     font-weight: bold;

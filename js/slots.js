@@ -5,48 +5,41 @@ function play_round(){
     document.getElementById('number-second').innerHTML = Math.floor(Math.random() * 10);
     document.getElementById('number-third').innerHTML = Math.floor(Math.random() * 10);
 
+    var dcoins = 0;
+    var multiplier = parseInt(document.getElementById('multiplier').value);
+    var message = '';
+
     // If all numbers match...
     if(document.getElementById('number-first').innerHTML === document.getElementById('number-second').innerHTML
       && document.getElementById('number-second').innerHTML === document.getElementById('number-third').innerHTML){
-        document.getElementById('result').innerHTML = 
-          'Three Match! +'
-          + (parseInt(document.getElementById('number-first').innerHTML) * 2)
-          + ' coins!';
-
         // ...give player twice as many coins as the numbers that matched.
-        coins += parseInt(document.getElementById('number-first').innerHTML) * 2;
+        dcoins = parseInt(document.getElementById('number-first').innerHTML) * 2 * multiplier;
+        message = 'Three Match! +' + dcoins + ' coins!';
 
     // If first number matches either of the other two numbers...
     }else if(document.getElementById('number-first').innerHTML === document.getElementById('number-second').innerHTML
       || document.getElementById('number-first').innerHTML === document.getElementById('number-third').innerHTML){
-        document.getElementById('result').innerHTML = 
-          'Two Match. +'
-          + document.getElementById('number-first').innerHTML
-          + ' coins.';
-
         // ...give player as many coins as the first number.
-        coins += parseInt(document.getElementById('number-first').innerHTML);
+        dcoins = parseInt(document.getElementById('number-first').innerHTML) * multiplier;
+        message = 'Two Match. +' + dcoins + ' coins.';
+
 
     // If the second and third numbers match...
     }else if(document.getElementById('number-second').innerHTML === document.getElementById('number-third').innerHTML){
-        document.getElementById('result').innerHTML = 
-          'Two Match. +'
-          + document.getElementById('number-second').innerHTML
-          + ' coins.';
-
         // ...give player as many coins as second number.
-        coins += parseInt(document.getElementById('number-second').innerHTML);
+        dcoins = parseInt(document.getElementById('number-second').innerHTML) * multiplier;
+        message = 'Two Match. +' + dcoins + ' coins.';
 
     // If no numbers match...
     }else{
-        document.getElementById('result').innerHTML = 'No Match... -2 coins...';
-
         // ...take away two coins from player.
-        coins -= 2;
+        dcoins = -2 * multiplier;
+        message = 'No Match... ' + dcoins + ' coins...';
     }
 
-    // Update remaining coins.
+    coins += dcoins;
     document.getElementById('coins').innerHTML = coins;
+    document.getElementById('result').innerHTML = message;
 }
 
 function reset(){
@@ -75,4 +68,5 @@ window.onkeydown = function(e){
 
 window.onload = function(e){
     document.getElementById('coins').innerHTML = coins;
+    document.getElementById('multiplier').value = 1;
 };
