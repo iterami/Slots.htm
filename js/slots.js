@@ -1,16 +1,13 @@
 'use strict';
 
 function play_round(){
-    document.getElementById('number-first').innerHTML = Math.floor(Math.random() * 10);
-    document.getElementById('number-second').innerHTML = Math.floor(Math.random() * 10);
-    document.getElementById('number-third').innerHTML = Math.floor(Math.random() * 10);
+    var first = Math.floor(Math.random() * 10);
+    var second = Math.floor(Math.random() * 10);
+    var third = Math.floor(Math.random() * 10);
 
     var dcoins = 0;
-    var first = parseInt(document.getElementById('number-first').innerHTML);
     var multiplier = parseInt(document.getElementById('multiplier').value);
     var message = '';
-    var second = parseInt(document.getElementById('number-second').innerHTML);
-    var third = parseInt(document.getElementById('number-third').innerHTML);
 
     // If all numbers match...
     if(first === second
@@ -42,6 +39,9 @@ function play_round(){
 
     coins += dcoins;
     document.getElementById('coins').innerHTML = coins;
+    document.getElementById('number-first').innerHTML = first;
+    document.getElementById('number-second').innerHTML = second;
+    document.getElementById('number-third').innerHTML = third;
     document.getElementById('result').innerHTML = message;
 }
 
