@@ -6,28 +6,31 @@ function play_round(){
     document.getElementById('number-third').innerHTML = Math.floor(Math.random() * 10);
 
     var dcoins = 0;
+    var first = parseInt(document.getElementById('number-first').innerHTML);
     var multiplier = parseInt(document.getElementById('multiplier').value);
     var message = '';
+    var second = parseInt(document.getElementById('number-second').innerHTML);
+    var third = parseInt(document.getElementById('number-third').innerHTML);
 
     // If all numbers match...
-    if(document.getElementById('number-first').innerHTML === document.getElementById('number-second').innerHTML
-      && document.getElementById('number-second').innerHTML === document.getElementById('number-third').innerHTML){
+    if(first === second
+      && second === third){
         // ...give player twice as many coins as the numbers that matched.
-        dcoins = parseInt(document.getElementById('number-first').innerHTML) * 2 * multiplier;
+        dcoins = first * 2 * multiplier;
         message = 'Three Match! +' + dcoins + ' coins!';
 
     // If first number matches either of the other two numbers...
-    }else if(document.getElementById('number-first').innerHTML === document.getElementById('number-second').innerHTML
-      || document.getElementById('number-first').innerHTML === document.getElementById('number-third').innerHTML){
+    }else if(first === second
+      || first === third){
         // ...give player as many coins as the first number.
-        dcoins = parseInt(document.getElementById('number-first').innerHTML) * multiplier;
+        dcoins = first * multiplier;
         message = 'Two Match. +' + dcoins + ' coins.';
 
 
     // If the second and third numbers match...
-    }else if(document.getElementById('number-second').innerHTML === document.getElementById('number-third').innerHTML){
+    }else if(second === third){
         // ...give player as many coins as second number.
-        dcoins = parseInt(document.getElementById('number-second').innerHTML) * multiplier;
+        dcoins = second * multiplier;
         message = 'Two Match. +' + dcoins + ' coins.';
 
     // If no numbers match...
