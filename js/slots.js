@@ -49,15 +49,22 @@ function reset(){
         return;
     }
 
-    coins = 100;
-    document.getElementById('coins').innerHTML = coins;
-    document.getElementById('number-first').innerHTML = '';
-    document.getElementById('number-second').innerHTML = '';
-    document.getElementById('number-third').innerHTML = '';
-    document.getElementById('result').innerHTML = '';
+    coins = coins_default;
+
+    var ids = {
+      'coins': coins,
+      'number-first': '',
+      'number-second': '',
+      'number-third': '',
+      'result': '',
+    };
+    for(var id in ids){
+        document.getElementById(id).innerHTML = ids[id];
+    }
 }
 
-var coins = 100;
+var coins_default = 100;
+var coins = coins_default;
 
 window.onkeydown = function(e){
     var key = e.keyCode || e.which;
