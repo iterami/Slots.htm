@@ -1,5 +1,5 @@
-Slots.htm
----------
+iterami/Slots.htm
+-----------------
 
 A JavaScript slots game.
 
