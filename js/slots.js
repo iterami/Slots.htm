@@ -69,16 +69,14 @@ function reset(){
 var coins_default = 100;
 var coins = coins_default;
 
-window.onkeydown = function(e){
-    var key = e.keyCode || e.which;
-
-    // S: play a round.
-    if(key === 83){
-        play_round();
-    }
-};
-
 window.onload = function(e){
+    init_input(
+      {
+        83: {
+          'todo': play_round,
+        },
+      }
+    );
     document.getElementById('coins').innerHTML = coins;
     document.getElementById('multiplier').value = 1;
 };
