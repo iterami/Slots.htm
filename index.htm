@@ -2,17 +2,16 @@
 <meta charset=utf-8>
 <meta content="width=device-width,initial-scale=1" name=viewport>
 <title>Slots.htm</title>
-<link href=css/slots.css rel=stylesheet>
+<link href=../common/css/dom.css rel=stylesheet>
 
-<input onclick=play_round() type=button value="Play Round [S]">
-<input onclick=reset() type=button value=Reset>
+<input onclick=play_round() type=button value="Play Round [S]"><input onclick=reset() type=button value=Reset>
 <span id=coins></span> coins
 <input id=multiplier>x
-<br>
-<div id=number-first></div>
-<div id=number-second></div>
-<div id=number-third></div>
-<br>
+<div class=big>
+    <div class=inline id=number-first></div>
+    <div class=inline id=number-second></div>
+    <div class=inline id=number-third></div>
+</div>
 <span id=result></span>
 
 <script src=../common/js/input.js></script>
