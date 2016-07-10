@@ -70,7 +70,7 @@ var coins_default = 100;
 var coins = coins_default;
 
 window.onload = function(e){
-    init_input(
+    input_init(
       {
         83: {
           'todo': play_round,
