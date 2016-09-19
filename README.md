@@ -1,13 +1,7 @@
 iterami/Slots.htm
 -----------------
 
-A JavaScript slots game.
-
----
-
-Action     | Key
------------|----
-Play Round | S
+A JavaScript slots simulation.
 
 ---
 
