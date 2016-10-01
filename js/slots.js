@@ -3,11 +3,11 @@
 function play_round(){
     var dcoins = 0;
     var first = random_integer(10);
-    var message = '';
     var multiplier = parseInt(
       document.getElementById('multiplier').value,
       10
     );
+    var result = '';
     var second = random_integer(10);
     var third = random_integer(10);
 
@@ -16,35 +16,38 @@ function play_round(){
       && second === third){
         // ...give player twice as many coins as the numbers that matched.
         dcoins = first * 2 * multiplier;
-        message = 'Three Match! +' + dcoins + ' coins!';
+        result = 'Three Match! +' + dcoins + ' coins!';
 
     // If first number matches either of the other two numbers...
     }else if(first === second
       || first === third){
         // ...give player as many coins as the first number.
         dcoins = first * multiplier;
-        message = 'Two Match. +' + dcoins + ' coins.';
+        result = 'Two Match. +' + dcoins + ' coins.';
 
 
     // If the second and third numbers match...
     }else if(second === third){
         // ...give player as many coins as second number.
         dcoins = second * multiplier;
-        message = 'Two Match. +' + dcoins + ' coins.';
+        result = 'Two Match. +' + dcoins + ' coins.';
 
     // If no numbers match...
     }else{
         // ...take away two coins from player.
         dcoins = -2 * multiplier;
-        message = 'No Match... ' + dcoins + ' coins...';
+        result = 'No Match... ' + dcoins + ' coins...';
     }
+
+    total += 1;
+    result = result + '<br>' + total + ' total games';
 
     coins += dcoins;
     document.getElementById('coins').innerHTML = coins;
     document.getElementById('number-first').innerHTML = first;
     document.getElementById('number-second').innerHTML = second;
     document.getElementById('number-third').innerHTML = third;
-    document.getElementById('result').innerHTML = message;
+    document.getElementById('result').innerHTML = result;
 }
 
 function reset(){
@@ -68,6 +71,7 @@ function reset(){
 
 var coins_default = 100;
 var coins = coins_default;
+var total = 0;
 
 window.onload = function(e){
     input_init(
