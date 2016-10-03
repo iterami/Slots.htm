@@ -81,6 +81,9 @@ window.onload = function(e){
         },
       }
     );
+
     document.getElementById('coins').innerHTML = coins;
     document.getElementById('multiplier').value = 1;
+    document.getElementById('play').onclick = play_round;
+    document.getElementById('reset').onclick = reset;
 };
