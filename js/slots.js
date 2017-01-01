@@ -2,14 +2,20 @@
 
 function play_round(){
     var dcoins = 0;
-    var first = random_integer(10);
+    var first = random_integer({
+      'max': 10,
+    });
     var multiplier = parseInt(
       document.getElementById('multiplier').value,
       10
     );
     var result = '';
-    var second = random_integer(10);
-    var third = random_integer(10);
+    var second = random_integer({
+      'max': 10,
+    });
+    var third = random_integer({
+      'max': 10,
+    });
 
     // If all numbers match...
     if(first === second
