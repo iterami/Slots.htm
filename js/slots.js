@@ -80,13 +80,13 @@ var coins = coins_default;
 var total = 0;
 
 window.onload = function(e){
-    input_init(
-      {
+    input_init({
+      'keybinds': {
         83: {
           'todo': play_round,
         },
-      }
-    );
+      },
+    });
 
     document.getElementById('coins').innerHTML = coins;
     document.getElementById('multiplier').value = 1;
