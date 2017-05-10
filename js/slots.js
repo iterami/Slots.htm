@@ -2,7 +2,7 @@
 
 function play_round(){
     var dcoins = 0;
-    var first = random_integer({
+    var first = core_random_integer({
       'max': 10,
     });
     var multiplier = parseInt(
@@ -10,10 +10,10 @@ function play_round(){
       10
     );
     var result = '';
-    var second = random_integer({
+    var second = core_random_integer({
       'max': 10,
     });
-    var third = random_integer({
+    var third = core_random_integer({
       'max': 10,
     });
 
