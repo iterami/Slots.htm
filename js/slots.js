@@ -80,7 +80,7 @@ var coins = coins_default;
 var total = 0;
 
 window.onload = function(e){
-    input_init({
+    core_input_init({
       'keybinds': {
         83: {
           'todo': play_round,
