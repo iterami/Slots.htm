@@ -56,6 +56,21 @@ function play_round(){
     document.getElementById('result').innerHTML = result;
 }
 
+function repo_init(){
+    core_input_binds_add({
+      'keybinds': {
+        83: {
+          'todo': play_round,
+        },
+      },
+    });
+
+    document.getElementById('coins').innerHTML = coins;
+    document.getElementById('multiplier').value = 1;
+    document.getElementById('play').onclick = play_round;
+    document.getElementById('reset').onclick = reset;
+}
+
 function reset(){
     if(!window.confirm('Reset coins?')){
         return;
@@ -78,18 +93,3 @@ function reset(){
 var coins_default = 100;
 var coins = coins_default;
 var total = 0;
-
-window.onload = function(e){
-    core_input_init({
-      'keybinds': {
-        83: {
-          'todo': play_round,
-        },
-      },
-    });
-
-    document.getElementById('coins').innerHTML = coins;
-    document.getElementById('multiplier').value = 1;
-    document.getElementById('play').onclick = play_round;
-    document.getElementById('reset').onclick = reset;
-};
