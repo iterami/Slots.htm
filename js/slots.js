@@ -57,7 +57,7 @@ function play_round(){
 }
 
 function repo_init(){
-    core_input_binds_add({
+    core_events_bind({
       'keybinds': {
         83: {
           'todo': play_round,
