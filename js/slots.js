@@ -45,15 +45,15 @@ function play_round(){
         result = 'No Match... ' + dcoins + ' coins...';
     }
 
-    total += 1;
-    result = result + '<br>' + total + ' total games';
+    core_storage_data['coins'] += dcoins;
+    core_storage_data['total'] += 1;
 
-    coins += dcoins;
-    document.getElementById('coins').innerHTML = coins;
     document.getElementById('number-first').innerHTML = first;
     document.getElementById('number-second').innerHTML = second;
     document.getElementById('number-third').innerHTML = third;
     document.getElementById('result').innerHTML = result;
+
+    core_storage_update();
 }
 
 function repo_init(){
@@ -63,34 +63,13 @@ function repo_init(){
           'todo': play_round,
         },
       },
+      'storage': {
+        'coins': 100,
+        'multiplier': 1,
+        'total': 0,
+      },
       'title': 'Slots.htm',
     });
 
-    document.getElementById('coins').innerHTML = coins;
-    document.getElementById('multiplier').value = 1;
     document.getElementById('play').onclick = play_round;
-    document.getElementById('reset').onclick = reset;
 }
-
-function reset(){
-    if(!window.confirm('Reset coins?')){
-        return;
-    }
-
-    coins = coins_default;
-
-    var ids = {
-      'coins': coins,
-      'number-first': '',
-      'number-second': '',
-      'number-third': '',
-      'result': '',
-    };
-    for(var id in ids){
-        document.getElementById(id).innerHTML = ids[id];
-    }
-}
-
-var coins_default = 100;
-var coins = coins_default;
-var total = 0;
