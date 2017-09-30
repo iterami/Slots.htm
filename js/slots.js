@@ -5,10 +5,6 @@ function play_round(){
     var first = core_random_integer({
       'max': 10,
     });
-    var multiplier = parseInt(
-      document.getElementById('multiplier').value,
-      10
-    );
     var result = '';
     var second = core_random_integer({
       'max': 10,
@@ -21,27 +17,27 @@ function play_round(){
     if(first === second
       && second === third){
         // ...give player twice as many coins as the numbers that matched.
-        dcoins = first * 2 * multiplier;
+        dcoins = first * 2 * core_storage_data['multiplier'];
         result = 'Three Match! +' + dcoins + ' coins!';
 
     // If first number matches either of the other two numbers...
     }else if(first === second
       || first === third){
         // ...give player as many coins as the first number.
-        dcoins = first * multiplier;
+        dcoins = first *  core_storage_data['multiplier'];
         result = 'Two Match. +' + dcoins + ' coins.';
 
 
     // If the second and third numbers match...
     }else if(second === third){
         // ...give player as many coins as second number.
-        dcoins = second * multiplier;
+        dcoins = second *  core_storage_data['multiplier'];
         result = 'Two Match. +' + dcoins + ' coins.';
 
     // If no numbers match...
     }else{
         // ...take away two coins from player.
-        dcoins = -2 * multiplier;
+        dcoins = -2 *  core_storage_data['multiplier'];
         result = 'No Match... ' + dcoins + ' coins...';
     }
 
@@ -53,7 +49,9 @@ function play_round(){
     document.getElementById('number-third').innerHTML = third;
     document.getElementById('result').innerHTML = result;
 
-    core_storage_update();
+    core_storage_update({
+      'bests': true,
+    });
 }
 
 function repo_init(){
@@ -64,10 +62,14 @@ function repo_init(){
         },
       },
       'storage': {
-        'coins': 100,
+        'coins': {
+          'default': 100,
+          'type': 1,
+        },
         'multiplier': 1,
         'total': 0,
       },
+      'storage-menu': '<table><tr><td><input id=multiplier><td>Multiplier</table>',
       'title': 'Slots.htm',
     });
 
