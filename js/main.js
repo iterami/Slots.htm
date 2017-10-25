@@ -2,9 +2,9 @@
 
 function repo_init(){
     core_repo_init({
-      'info-events': {
+      'events': {
         'play': {
-          'todo': play_round,
+          'onclick': play_round,
         },
       },
       'keybinds': {
