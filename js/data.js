@@ -49,7 +49,5 @@ function play_round(){
     document.getElementById('number-third').innerHTML = third;
     document.getElementById('result').innerHTML = result;
 
-    core_storage_update({
-      'bests': true,
-    });
+    core_storage_update();
 }

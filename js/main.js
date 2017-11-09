@@ -13,10 +13,7 @@ function repo_init(){
         },
       },
       'storage': {
-        'coins': {
-          'default': 100,
-          'type': 1,
-        },
+        'coins': 100,
         'multiplier': 1,
         'total': 0,
       },
