@@ -8,7 +8,7 @@ function repo_init(){
         },
       },
       'keybinds': {
-        83: {
+        13: {
           'todo': play_round,
         },
       },
