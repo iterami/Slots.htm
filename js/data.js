@@ -1,15 +1,15 @@
 'use strict';
 
 function play_round(){
-    var dcoins = 0;
-    var first = core_random_integer({
+    let dcoins = 0;
+    let first = core_random_integer({
       'max': 10,
     });
-    var result = '';
-    var second = core_random_integer({
+    let result = '';
+    let second = core_random_integer({
       'max': 10,
     });
-    var third = core_random_integer({
+    let third = core_random_integer({
       'max': 10,
     });
 
