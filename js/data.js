@@ -44,10 +44,10 @@ function play_round(){
     core_storage_data['coins'] += dcoins;
     core_storage_data['total'] += 1;
 
-    document.getElementById('number-first').innerHTML = first;
-    document.getElementById('number-second').innerHTML = second;
-    document.getElementById('number-third').innerHTML = third;
-    document.getElementById('result').innerHTML = result;
+    document.getElementById('number-first').textContent = first;
+    document.getElementById('number-second').textContent = second;
+    document.getElementById('number-third').textContent = third;
+    document.getElementById('result').textContent = result;
 
     core_storage_update();
 }
