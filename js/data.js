@@ -2,14 +2,14 @@
 
 function play_round(){
     let dcoins = 0;
-    let first = core_random_integer({
+    const first = core_random_integer({
       'max': 10,
     });
     let result = '';
-    let second = core_random_integer({
+    const second = core_random_integer({
       'max': 10,
     });
-    let third = core_random_integer({
+    const third = core_random_integer({
       'max': 10,
     });
 
