@@ -17,7 +17,7 @@ function repo_init(){
         'multiplier': 1,
         'total': 0,
       },
-      'storage-menu': '<table><tr><td><input id=multiplier step=any type=number><td>Multiplier</table>',
+      'storage-menu': '<table><tr><td><input class=mini id=multiplier step=any type=number><td>Multiplier</table>',
       'title': 'Slots.htm',
     });
 }
