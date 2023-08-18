@@ -2,29 +2,29 @@
 
 function play_round(){
     let dcoins = 0;
-    const first = core_random_integer({
+    const value1 = core_random_integer({
       'max': 10,
     });
     let result = '';
-    const second = core_random_integer({
+    const value2 = core_random_integer({
       'max': 10,
     });
-    const third = core_random_integer({
+    const value3 = core_random_integer({
       'max': 10,
     });
 
-    if(first === second
-      && second === third){
-        dcoins = (first * 3) * core_storage_data['multiplier'];
+    if(value1 === value2
+      && value2 === value3){
+        dcoins = (value1 * 3) * core_storage_data['multiplier'];
         result = 'Three Match! +' + dcoins + ' coins!';
 
-    }else if(first === second
-      || first === third){
-        dcoins = first * core_storage_data['multiplier'];
+    }else if(value1 === value2
+      || value1 === value3){
+        dcoins = value1 * core_storage_data['multiplier'];
         result = 'Two Match. +' + dcoins + ' coins.';
 
-    }else if(second === third){
-        dcoins = second * core_storage_data['multiplier'];
+    }else if(value2 === value3){
+        dcoins = value2 * core_storage_data['multiplier'];
         result = 'Two Match. +' + dcoins + ' coins.';
 
     }else{
@@ -35,9 +35,9 @@ function play_round(){
     core_storage_data['coins'] += dcoins;
     core_storage_data['total'] += 1;
 
-    document.getElementById('number-first').textContent = first;
-    document.getElementById('number-second').textContent = second;
-    document.getElementById('number-third').textContent = third;
+    document.getElementById('value1').textContent = value1;
+    document.getElementById('value2').textContent = value2;
+    document.getElementById('value3').textContent = value3;
     document.getElementById('result').textContent = result;
 
     core_storage_update();
